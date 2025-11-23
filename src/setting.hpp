@@ -2,7 +2,7 @@
 
 #include <common.hpp>
 
-#define EXL_MODULE_NAME "SMO Base"
+#define EXL_MODULE_NAME "SMO Kingdom 18 Base"
 
 #define EXL_DEBUG
 

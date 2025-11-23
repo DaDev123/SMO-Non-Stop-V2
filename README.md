@@ -9,6 +9,12 @@ exlaunch configuration to create mods for SMO.
 - [exlaunch-cmake](https://github.com/EngineLessCC/exlaunch-cmake/)
 - [Odyssey-Headers](https://github.com/MonsterDruide1/OdysseyHeaders)
 
+# Clone the Repository
+
+```sh
+git clone https://github.com/DaDev123/SMO-Non-Stop-V2.git --recursive
+```
+
 # Update game headers
 
 To update game headers simply run
