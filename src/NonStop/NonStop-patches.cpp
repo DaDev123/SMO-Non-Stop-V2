@@ -123,6 +123,8 @@ namespace NonStopPatches {
     }
 
     void installNonStopPatches() {
+        installSDFileRedirection();
+        allowSaveOnSDCard();
         SkipCutscenes();
         SkipShineDemos();
         SkipShineChipCutscenes();
@@ -135,7 +137,7 @@ namespace NonStopPatches {
         MiscPatches();
         
         NonStopHooks();
-        //installSDFileRedirection();
-        //allowSaveOnSDCard();
+
+
     }
 }

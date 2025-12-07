@@ -1,28 +1,35 @@
 #pragma once
 
-// borrowed from https://github.com/Amethyst-szs/shadow-clone-chasers
-
 #include "Library/Nerve/NerveStateBase.h"
 
-#include "Sequence/HakoniwaSequence.h"
-#include "Sequence/WorldResourceLoader.h"
+class HakoniwaSequence;
 
 namespace speedboot {
+    /**
+     * Custom nerve state for handling speedboot loading sequence
+     * Manages initialization, resource loading, and transitions
+     */
     class HakoniwaSequenceSpeedboot : public al::NerveStateBase {
     public:
-        HakoniwaSequenceSpeedboot(HakoniwaSequence* sequence);
+        explicit HakoniwaSequenceSpeedboot(HakoniwaSequence* sequence);
 
+        // Nerve execution functions
         void exeInitThread();
         void exeLoadStage();
         void exeWipeToKill();
 
-        bool isDoneLoading() const {
-            return mSequence->mResourceLoader->isEndLoadWorldResource() && mSequence->mInitThread->isDone();
-        }
+        /**
+         * Check if both world resources and initialization thread are complete
+         */
+        bool isDoneLoading() const;
 
     private:
         HakoniwaSequence* mSequence;
     };
-} // namespace speedboot
+}
 
+/**
+ * Initialize code patches for speedboot functionality
+ * Must be called during mod initialization
+ */
 void setupBootHooks();
